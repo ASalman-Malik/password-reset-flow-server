@@ -72,7 +72,7 @@ app.post('/register', async (req, res) => {
         useUnifiedTopology: true
     }); //connect to db
 
-    let db = client.db("rightclick"); //db name
+    let db = client.db("password-reset-flow"); //db name
     let user = db.collection("users"); //collection name
     user.findOne({
         email: email
@@ -109,7 +109,7 @@ app.post("/login", async (req, res) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }); //connect to db
-    let db = client.db("rightclick"); //db name
+    let db = client.db("password-reset-flow"); //db name
     let user = db.collection("users"); //collection name
     user.findOne({
         email: email
@@ -162,7 +162,7 @@ app.post("/resetpassword", async (req, res) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }); //connect to db
-    let db = client.db("rightclick"); //db name
+    let db = client.db("password-reset-flow"); //db name
     let user = db.collection("users"); //collection name
     user.findOne({ //find if the email exist in the collection
         email: email
@@ -225,7 +225,7 @@ app.get('/auth/:token', async (req, res) => {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
             });
-            let db = client.db("rightclick"); //db name
+            let db = client.db("password-reset-flow"); //db name
             let user = db.collection("users"); //collection name
             user.findOneAndUpdate({
                 email: decoded.email
@@ -260,7 +260,7 @@ app.post('/passwordreset', async (req, res) => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }); //connect to db
-    let db = client.db("rightclick"); //db name
+    let db = client.db("password-reset-flow"); //db name
     let user = db.collection("users"); //collection name
     user.findOne({
         email: email

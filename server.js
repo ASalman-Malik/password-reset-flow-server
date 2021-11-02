@@ -14,11 +14,11 @@ const url = process.env.MONGODB_URL;
 app.proxy = true
 
 const allowedOrigins = [
-    'https://password-reset-flow-ui.netlify.app', 
-    'https://password-reset-flow-ui.netlify.app/index.html', 
-    'https://password-reset-flow-ui.netlify.app/resetpassword.html',
-     'https://password-reset-flow-ui.netlify.app/newpassword.html', 
-     'https://password-reset-flow-ui.netlify.app/signup.html',
+    'https://password-reset-flow-client.netlify.app/', 
+    'https://password-reset-flow-client.netlify.app//index.html', 
+    'https://password-reset-flow-client.netlify.app//resetpassword.html',
+     'https://password-reset-flow-client.netlify.app//newpassword.html', 
+     'https://password-reset-flow-client.netlify.app//signup.html',
      '*'
     ]
 app.use(cors({
@@ -235,7 +235,7 @@ app.get('/auth/:token', async (req, res) => {
                 }
             }, (err, result) => {
                 if (result) {
-                    res.redirect('https://password-reset-flow-ui.netlify.app/newpassword.html');
+                    res.redirect('https://password-reset-flow-client.netlify.app//newpassword.html');
                 }
             });
         }

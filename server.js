@@ -184,7 +184,7 @@ app.post("/resetpassword", async (req, res) => {
                     password: emailToken
                 }
             }); //update the password with a token
-            let url = `https://password-reset-flow-server.herokuapp.com/auth/${emailToken}`
+            let url = `https://password-reset-flow-server-sam.herokuapp.com/auth/${emailToken}`
             let name = `${email.split('@')[0]}`
             //email template for sending token
             var mailOptions = {
